@@ -3,8 +3,9 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
 
-load_dotenv() # для завантаження змінних середовища з .env файлу
+load_dotenv() 
 mongo_uri = os.getenv("MONGO_URI") # отримання URI з змінних середовища
+
 # Підключення до MongoDB
 client = MongoClient(mongo_uri)
 
@@ -42,10 +43,6 @@ cats = [
     "features": ["ходить в лоток", "дає себе гладити", "чорний"]
     }
 ]
-
-# Вставка документів
-# result = cats_collection.insert_many(cats)
-# print("Додані документи з ID:", result.inserted_ids)
 
 # Вставка документів (тільки якщо колекція порожня для уникнення дублювання даних при повторних запусках)
 if cats_collection.count_documents({}) == 0:
@@ -119,7 +116,7 @@ def delete_all_cats():
 
 # Виклик функцій
 # find_cat_by_name() # Пошук одного кота за ім'ям
-update_cat_age() # Оновлення віку кота
+# update_cat_age() # Оновлення віку кота
 # add_feature_to_cat() # Додавання нової характеристики коту
 # delete_cat_by_name() # Видалення кота за ім'ям
 # delete_all_cats() # Видалення всіх котів з колекції
