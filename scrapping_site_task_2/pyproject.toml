@@ -1,0 +1,17 @@
+[project]
+name = "scrapping-site-task-2"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Pasha0923",email = "alexsai@i.ua"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["requests (>=2.32.5,<3.0.0)", "beautifulsoup4 (>=4.14.3,<5.0.0)"]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
